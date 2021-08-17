@@ -3,11 +3,12 @@ import "./styles.css";
 
 var emojiDictionary = {
   "": "",
-  "😀": "HappyFace",
+  "😀": ["HappyFace", "smiley"],
   "🤩": "StarStruck",
   "😍": "SmilingFaceHeartEyes",
   "😛": "FaceWithTounge",
-  "🤑": "MoneyMouthFace"
+  "🤑": "MoneyMouthFace",
+  "♣": "Spades"
 };
 export default function App() {
   const [meaning, setMeaning] = useState("");
@@ -15,8 +16,8 @@ export default function App() {
   console.log(emojisWeKnow);
 
   function listItemClickHandler(item) {
-    Meaning = emojiDictionary[item];
-    setMeaning(Meaning);
+    const meaning = emojiDictionary[item];
+    setMeaning(meaning);
   }
 
   function emojiInputHandler(event) {
